@@ -15,16 +15,23 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-import arg_parser.py as ap
-import get_wishlist.py
-import prettytable
+import arg_parser as ap
+import get_wishlist
+from prettytable import PrettyTable
 
 """
 args = ap.parser.parse_args()
 
 wishlist = get_wishlist.get(args)
 
-Create prettytable of wishlist
+def prettify(wishlist):
+    Use prettytable to convert the wishlist dict to a pretty table
+
+pretty_list = prettify(wishlist)
 
 print(pretty_list)
 """
+
+def prettify(wishlist):
+    """Use prettytable to convert the wishlist dict to a pretty table"""
+    pass

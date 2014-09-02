@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-import beautifulsoup as soup
+import bs4
 
 """
 def get(args):
@@ -37,5 +37,8 @@ def parse_page(page):
     Use beautifulsoup to get necessary parts of page:
         Name, price, num(wanted-got), priority
     Make these into list of dicts - each dict being an item on the list
+    wishlist_dict{
+        name:, price:, quantity:, priority
+    }
     return wishlist_dict
-
+"""
