@@ -7,8 +7,6 @@ import amazon_wishlist_tools as awt
 
 
 class Prettifying(unittest.TestCase):
-    """Test the formatting of the wishlist dict"""
-
     def test_formatting_correct(self):
         wishlist = [
             {"name": "Long Amazon name because sellers like to fit as many"
