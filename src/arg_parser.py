@@ -20,11 +20,15 @@ import argparse
 """
 Pseudocode
 
-parser = argparse.ArgumentParser(
-                description="Useful tools for your Amazon wishlist")
+def create_parser():
+    parser = argparse.ArgumentParser(
+                    description="Useful tools for your Amazon wishlist")
 
-parser.add_argument(reveal, all|purchased|unpurchased)
-parser.add_argument(sort, priority|last-updated|date-added|price|price-desc|name)
-parser.add_argument(total, default=False, store_true)
-parser.add_argument(url, default=False)
+    parser.add_argument(reveal, all|purchased|unpurchased)
+    parser.add_argument(sort, priority|last-updated|date-added|price|price-desc|name)
+    parser.add_argument(total, default=False, store_true)
+    parser.add_argument(url, default=False)
 """
+
+def create_parser():
+    pass
