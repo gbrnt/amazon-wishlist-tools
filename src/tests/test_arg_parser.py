@@ -8,10 +8,11 @@ import arg_parser
 
 
 class ParseArguments(unittest.TestCase):
-    def test_create_parser(self):
+    def setUp(self):
         self.parser = arg_parser.create_parser()
 
-        self.assertIsInstance(parser, argparse.ArgumentParser)
+    def test_create_parser(self):
+        self.assertIsInstance(self.parser, argparse.ArgumentParser)
 
     def test_parser_creates_namespace(self):
         args = self.parser.parse_args(["http://amazon.co.uk"])
@@ -23,7 +24,7 @@ class ParseArguments(unittest.TestCase):
 
         self.assertEqual(args.reveal, "all")
         self.assertEqual(args.sort, "last-updated")
-        self.asertEqual(args.total, "False")
+        self.asertEqual(args.total, False)
         self.assertEqual(args.url, "http://amazon.co.uk")
 
     def test_parser_exception_on_no_url(self):
@@ -38,7 +39,7 @@ class ParseArguments(unittest.TestCase):
             "http://amazon.co.uk"
         ]
 
-        args = self.parser.parse(args(args_to_give))
+        args = self.parser.parse_args(args_to_give))
 
         self.assertEqual(args.reveal, "unpurchased")
         self.assertEqual(args.sort, "priority")
