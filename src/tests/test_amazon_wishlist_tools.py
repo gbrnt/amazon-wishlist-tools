@@ -16,7 +16,7 @@ class Prettifying(unittest.TestCase):
                 "quantity": 1, "priority": 2}
         ]
 
-        expected_result = "+------------------------------------------------"
+        expected_result = ("+------------------------------------------------"
         "-------------------------------------+-------+----------+----------"
         "+\n|                                         Name                  "
         "                      | Price | Quantity | Priority |\n+-----------"
@@ -26,7 +26,7 @@ class Prettifying(unittest.TestCase):
         "|    7     |    5     |\n|                             Slightly sho"
         "rter Amazon name                            | 56.42 |    1     |   "
         " 2     |\n+--------------------------------------------------------"
-        "-----------------------------+-------+----------+----------+"
+        "-----------------------------+-------+----------+----------+")
 
         self.assertEqual(awt.prettify(wishlist), expected_result)
 
