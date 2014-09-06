@@ -16,6 +16,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 import bs4
+import requests
 
 """
 def get(args):
@@ -31,6 +32,7 @@ def construct_url(args):
 
 def retrieve(url):
     Get page from amazon
+    # page_html = requests.get(url).text
     return page_html
 
 def parse_page(page):
@@ -38,7 +40,7 @@ def parse_page(page):
         Name, price, num(wanted-got), priority
     Make these into list of dicts - each dict being an item on the list
     wishlist_dict{
-        name:, price:, quantity:, priority
+        name:, price:, quantity_want:, quantity_have:, priority:
     }
     return wishlist_dict
 """
