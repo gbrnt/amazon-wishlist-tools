@@ -39,7 +39,7 @@ class ParseArguments(unittest.TestCase):
             "http://amazon.co.uk"
         ]
 
-        args = self.parser.parse_args(args_to_give))
+        args = self.parser.parse_args(args_to_give)
 
         self.assertEqual(args.reveal, "unpurchased")
         self.assertEqual(args.sort, "priority")
