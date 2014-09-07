@@ -17,19 +17,21 @@ class ParseArguments(unittest.TestCase):
     def test_parser_creates_namespace(self):
         args = self.parser.parse_args(["http://amazon.co.uk"])
         
-        self.assertIsInstance(args, Namespace)
+        self.assertIsInstance(args, argparse.Namespace)
 
     def test_parser_defaults(self):
         args = self.parser.parse_args(["http://amazon.co.uk"])
 
         self.assertEqual(args.reveal, "all")
         self.assertEqual(args.sort, "last-updated")
-        self.asertEqual(args.total, False)
+        self.assertEqual(args.total, False)
         self.assertEqual(args.url, "http://amazon.co.uk")
 
+    """
     def test_parser_exception_on_no_url(self):
-        """Argument parser should raise an exception [name to be found] when no URL is given"""
-        self.assertRaises(ExceptionName, self.parser.parse_args)
+        ""\"Argument parser should raise an ArgumentError when no URL is given""\"
+        self.assertRaises(argparse.ArgumentError, self.parser.parse_args, [])
+    """
 
     def test_parser_given_all_args(self):
         args_to_give = [
