@@ -73,6 +73,29 @@ class TestGetWishlist(unittest.TestCase):
 
         self.assertEqual(wish_list[0]["priority"], "medium")
 
+    def test_parsing_with_modified_args(self):
+        with open("tests/example_wish_list_2.htm", "r") as example_list:
+            html = example_list.read()
+
+        wish_list = get_wishlist.parse_page(html)
+
+        self.assertEqual(
+            wish_list[1]["name"],
+            ("Test-Driven Development with Python by Harry J.W. Percival"
+            "(Paperback)")
+            )
+
+        self.assertEqual(
+            wish_list[1]["price"],
+            "18.53"
+            )
+
+        self.assertEqual(wish_list[1]["quantity_want"], 2)
+
+        self.assertEqual(wish_list[1]["quantity_have"], 1)
+
+        self.assertEqual(wish_list[1]["priority"], "low")
+
     def test_wish_list_len(self):
         with open("tests/example_wish_list.htm", "r") as example_list:
             html = example_list.read()
