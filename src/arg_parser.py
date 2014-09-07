@@ -17,18 +17,30 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import argparse
 
-"""
-Pseudocode
 
 def create_parser():
     parser = argparse.ArgumentParser(
-                    description="Useful tools for your Amazon wishlist")
+        description="Useful tools for your Amazon wishlist")
 
-    parser.add_argument(reveal, all|purchased|unpurchased)
-    parser.add_argument(sort, priority|last-updated|date-added|price|price-desc|name)
-    parser.add_argument(total, default=False, store_true)
-    parser.add_argument(url, default=False)
-"""
+    parser.add_argument("-r", "--reveal",
+                        choices=["all", "purchased", "unpurchased"],
+                        default="all",
+                        help=("Reveal all items or only "
+                              "those purchased or unpurchased"))
 
-def create_parser():
-    pass
+    sort_choices = ["priority", "last-updated", "date-added",
+                    "price", "price-desc", "name"]
+    parser.add_argument("-s", "--sort",
+                        choices=sort_choices,
+                        default="last-updated",
+                        help="Choose sorting method")
+
+    parser.add_argument("-t", "--total",
+                        action="store_true",
+                        default=False,
+                        help="Shows total cost")
+
+    parser.add_argument("url",
+                        help="The URL of the amazon wish list to use")
+
+    return parser
